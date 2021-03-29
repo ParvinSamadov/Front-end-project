@@ -1,0 +1,16 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "../base/common";
+
+
+.nav{
+    &-item{
+        .nav-link{
+            color:$font-color;
+            font-size: $base*4;
+            font-weight: 500;
+        }
+        .nav-link:hover{
+            color:$secondary-color !important;
+        }
+    }
+}

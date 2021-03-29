@@ -1,0 +1,68 @@
+@import "../base/common";
+*{
+    box-sizing: border-box !important;
+}
+*::after{
+    box-sizing: border-box !important;
+}
+*::before{
+    box-sizing: border-box !important;
+}
+.header-part{
+    top: 0;
+    height: 110px;
+    z-index: 1;
+    &__container{
+        padding: 20px !important;
+        .logo{
+                &__first,&__second{
+                    display: inline-block;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: 0 0;
+                    top: 0;
+            }
+            &__first:hover,&__second:hover{
+                cursor: pointer;
+            }
+            &__first{
+                background-image: url('https://www.simbrella.com/site/templates/img/logo.svg');
+                opacity: 1;
+            }
+            &__second{
+                background-image: url('https://www.simbrella.com/site/templates/img/logo_colored.svg');
+                opacity: 0;
+            }
+        }
+    }
+}
+.bottom-of-header{
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.3)  75%, rgba(0, 0, 0, 0.3) 100%), url('https://www.simbrella.com/site/assets/files/1040/cover.jpg');
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+    background-size: cover;
+    .container{
+        .row{
+            .col-12{
+                .info{
+                    &__head{
+                        font-size: $base*12;
+                        font-weight: 600;
+                    }
+                }
+                
+            }
+        }
+        .scroll-button{
+            &__container{
+                &--txt{
+                    font-size: $base*3+2;
+                }
+            }
+            &__container:hover{
+                text-decoration: none;
+            }
+        }
+    }
+}
