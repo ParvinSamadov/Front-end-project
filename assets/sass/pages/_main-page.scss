@@ -1,6 +1,8 @@
 @import "../base/common";
 *{
     box-sizing: border-box !important;
+    margin:0; 
+    padding : 0;
 }
 *::after{
     box-sizing: border-box !important;
@@ -8,29 +10,28 @@
 *::before{
     box-sizing: border-box !important;
 }
+.add-box-shadow{
+    box-shadow: #efefef 0px 1px 2px 1px;
+}
 .header-part{
     top: 0;
     height: 110px;
     z-index: 1;
+    transition: .5s;
     &__container{
         padding: 20px !important;
         .logo{
+                height: 55.4px;
                 &__first,&__second{
-                    display: inline-block;
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    background-position: 0 0;
                     top: 0;
             }
             &__first:hover,&__second:hover{
                 cursor: pointer;
             }
             &__first{
-                background-image: url('https://www.simbrella.com/site/templates/img/logo.svg');
                 opacity: 1;
             }
             &__second{
-                background-image: url('https://www.simbrella.com/site/templates/img/logo_colored.svg');
                 opacity: 0;
             }
         }
@@ -40,15 +41,18 @@
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.3)  75%, rgba(0, 0, 0, 0.3) 100%), url('https://www.simbrella.com/site/assets/files/1040/cover.jpg');
     background-repeat: no-repeat;
-    background-position: 0% 50%;
     background-size: cover;
     .container{
         .row{
             .col-12{
                 .info{
                     &__head{
-                        font-size: $base*12;
+                        font-size: $base*5;
                         font-weight: 600;
+                    }
+                    &__body{
+                        font-size: 100%;
+                        line-height: 1.2;
                     }
                 }
                 
@@ -62,6 +66,99 @@
             }
             &__container:hover{
                 text-decoration: none;
+            }
+        }
+    }
+}
+.what-we-do{
+    color: $primary-color;
+    .container{
+        .row{
+            .col-12{
+                .header-what-we-do{
+                    &-button{
+                        border-radius: $base*3-1 !important;
+                        border: 3px solid #cccccc;
+                        outline: none;
+                        color: black;
+                        font-size: $base*4-1;
+                        font-weight: 600;
+                        padding: $base*3;
+                    }
+                    &-button:hover{
+                        background-color: white;
+                        border: 3px solid $secondary-color;
+                        color: black;
+                    }
+                    &-button:hover img{
+                        transform: translateX($base);
+                        transition: .2s;
+                    }
+                }
+                .col-12{
+                    .cards-containers{
+                        width: calc(33.333% - 20px);
+                        transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+                        color: black;
+                        .custom-cards{
+                        padding: 40px 20px;
+                        color: black;
+                        .customized-img{
+                            height: 230px !important;
+                        }
+                        }
+                    }
+                    .cards-containers:hover{
+                        transform: scale(1.02);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.what-we-do-2{
+    background-image: url('https://www.simbrella.com/site/assets/files/1049/solutions_bg-1.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    .text-container{
+        h1{
+            font-size: $base*13;
+            font-weight: 600;
+            width: 70%;
+        }
+    }
+    .right-side{
+        background-color:rgba(45, 49, 146, 0.6);
+        .customized-list-group{
+            list-style-type: none !important;
+            width: 80%;
+            &__items{
+                padding: $base*6 0;
+                border-bottom:1px solid #504e78 ;
+                font-weight: bold;
+                font-size: $base*5;
+            }
+        }
+    }
+}
+.who-we-are{
+    .container{
+        .row{
+            .col-12{
+                .who-we-are_head{
+                    color: $primary-color;
+                }
+            }
+            .col-md-12{
+                .col-md-4{
+                    .statistics{
+
+                        color: $secondary-color;
+                    }
+                }
             }
         }
     }

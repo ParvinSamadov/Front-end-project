@@ -6,32 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Simbrella</title>
 </head>
 
 <body>
     <header class="header-part position-fixed w-100 d-flex align-items-center">
         <div class="container d-flex flex-wrap header-part__container">
-            <div class="logo col-4  position-relative">
-                <a href="#" class="logo__first w-50 h-100 position-absolute"></a>
-                <a href="#" class="logo__second w-50 h-100 position-absolute"></a>
+            <div class="logo col-4 position-relative">
+                <img src="https://www.simbrella.com/site/templates/img/logo.svg" class="logo__first w-50 h-100 position-absolute"></img>
+                <img src="https://www.simbrella.com/site/templates/img/logo_colored.svg" class="logo__second w-50 h-100 position-absolute"></img>
             </div>
             <div class="col-8">
-                <ul class="nav justify-content-end">
+                <ul class="nav justify-content-lg-end">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">What we do</a>
+                        <a class="nav-link nav-link-1" href="#">What we do</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Who we are</a>
+                        <a class="nav-link nav-link-2" href="#">Who we are</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Jobs</a>
+                        <a class="nav-link nav-link-3" href="#">Jobs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">News</a>
+                        <a class="nav-link nav-link-4" href="#">News</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contacts</a>
+                        <a class="nav-link nav-link-5" href="#">Contacts</a>
                     </li>
                 </ul>
             </div>
@@ -39,24 +40,124 @@
     </header>
     <section class="bottom-of-header">
         <div class="container h-100 d-flex align-items-center justify-content-center flex-wrap">
-            <div class="row align-self-end">
+            <div class="row align-self-center align-self-md-end">
                 <div class="col-12 d-flex flex-column">
                     <div class="info col-7">
-                        <h1 class="info__head text-light">First Company in the world to launch Mobile Fintech Services</h1>
-                        <p class="info__body text-light">We are serving over 25 companies in 20 countries worldwide and this number is growing with new launches every quarter.</p>
+                        <h1 class="info__head text-light">First Company in the world to launch Mobile Fintech Services
+                        </h1>
+                        <p class="info__body text-light">We are serving over 25 companies in 20 countries worldwide and
+                            this number is growing with new launches every quarter.</p>
                     </div>
                 </div>
             </div>
-            <div class="scroll-button col-7 mr-auto mb-5 align-self-end">
-                <a href="#" class="scroll-button__container text-light d-flex">
+            <div class="scroll-button d-none d-md-block col-7 mr-auto mb-5 align-self-end">
+                <div class="scroll-button__container text-light d-flex">
                     <img src="https://www.simbrella.com/site/templates/img/mouse_icon.svg" alt="scroll">
                     <span class="scroll-button__container--txt align-self-center ml-2">
                         Scroll to discover us!
                     </span>
-                </a>
+                </div>
             </div>
         </div>
     </section>
+    <section class="what-we-do p-5 mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="col-12 header-what-we-do d-flex flex-wrap justify-content-between mb-5">
+                        <h2>What we do</h2>
+                        <a href="#" class="btn btn-outline-secondary btn-lg header-what-we-do-button">Read more
+                            <img src="https://www.simbrella.com/site/templates/img/link_orange_icon.svg" class="ml-5"
+                                alt="">
+                        </a>
+                    </div>
+                    <div class="col-12 d-md-flex flex-md-wrap justify-content-md-between">
+                        <a href="#" class="text-decoration-none cards-containers">
+                            <div class="card w-100 custom-cards h-100 mb-3 mb-md-0" style="width: 18rem;">
+                                <img class="card-img-top customized-img" src="https://www.simbrella.com/site/assets/files/1043/1.svg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">AI & ML based scoring</h5>
+                                    <p class="card-text">We determine the credit-worthiness of each client, using behavioral scoring model.</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="text-decoration-none cards-containers">
+                            <div class="card w-100 custom-cards h-100 mb-3 mb-md-0" style="width: 18rem;">
+                                <img class="card-img-top customized-img" src="https://www.simbrella.com/site/assets/files/1044/2_1.svg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Micro-lending technology</h5>
+                                    <p class="card-text">We deliver microlending solution which includes processing, disbursement, repayment, recovery and management of loans.</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="text-decoration-none cards-containers">
+                            <div class="card w-100 custom-cards h-100 mb-3 mb-md-0" style="width: 18rem;">
+                                <img class="card-img-top customized-img" src="https://www.simbrella.com/site/assets/files/1045/3-1.svg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Big data engine</h5>
+                                    <p class="card-text">We use latest advancements in Artificial Intelligence and Machine Learning to maximize our value proposition.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="what-we-do-2 d-md-flex height-lg-special flex-md-wrap justify-content-md-center align-items-md-center">
+        <div class="h-50 col-md-6 text-container d-flex justify-content-center align-items-center">
+            <h1>Tech-Powered Financial Solutions</h1>
+        </div>
+        <div class="h-50 col-md-6 height-lg-special right-side d-flex justify-content-center align-items-center">
+            <ul class="customized-list-group">
+                <li class="customized-list-group__items">AI and ML based scoring engine</li>
+                <li class="customized-list-group__items">End-to-end lending technology</li>
+                <li class="customized-list-group__items">High-performing and secure operating platform</li>
+                <li class="customized-list-group__items">Fast and consistent decision making</li>
+                <li class="customized-list-group__items">Flexible customizable solution</li>
+              </ul>
+        </div>
+    </section>
+    <section class="who-we-are">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 pt-4 pb-4 mt-4 mb-4">
+                    <div class="col-12 who-we-are_head">
+                        <h1>Enhance your opportunities with us</h1>
+                    </div>
+                </div>
+                <div class="col-md-12 pt-md-5 pb-md-5 mt-md-5 mb-md-5 border-md-who-we-are d-md-flex flex-md-wrap justify-content-md-between">
+                    <div class="col-md-4">
+                        <h1 class="statistics">220Million</h1>
+                        <p>END USERS SERVED GLOBALLY</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h1 class="statistics">20Years</h1>
+                        <p>OF PROFESSIONAL EXPERIENCE</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h1 class="statistics">3.1Billion$</h1>
+                        <p>WORTH OF TOTAL LOANS DISBURSED TO DATE</p>
+                    </div>
+                </div>
+                <div class="col-md-12 pt-md-5 pb-md-5 mt-md-5 mb-md-5 d-md-flex flex-md-wrap justify-content-md-between">
+                    <div class="col-md-4">
+                        <h1 class="statistics">30Million</h1>
+                        <p>TRANSACTIONS PER DAY</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h1 class="statistics">25Countries</h1>
+                        <p>OUR GLOBAL PRESENCE</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h1 class="statistics">10.2Billion</h1>
+                        <p>TOTAL LOANS PROVIDED TO DATE</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./assets/script/script.js"></script>
 </body>
 
 </html>
