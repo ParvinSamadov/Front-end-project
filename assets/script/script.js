@@ -1,24 +1,161 @@
 $(document).ready(function(){
-    const header=$('.header-part.position-fixed.w-100.d-flex.align-items-center');
-    const scrollerButton=$('.scroll-button__container.text-light.d-flex');
+    const primaryColor='#2D3192';
+    const secondaryColor='#FF931E';
+    const mapColor='#E5E9F4';
+    const header=$('.header-part');
+    const hamburgerButton=$('.header__hamburger');
+    const scrollerButton=$('.scroll-button__container');
+    hamburgerButton.click(function(){
+        if(header.children()[0].className==='d-flex flex-wrap header-part__container after-click'){
+            // header.children()[0].classList.add('container');
+            header.children()[0].classList.remove('after-click');
+        }
+        header.children()[0].classList.remove('container');
+        header.children()[0].classList.add('after-click');
+        hamburgerButton.addClass('header__hamburger--active')
+    })
+    //#region map circle mouseenter mosueleave events
+    $('.Russia').mouseenter(function(){
+        $('#Russia').css('fill',primaryColor);
+    })
+    $('.Russia').mouseleave(function(){
+        $('#Russia').css('fill',mapColor);
+    })
+    $('.ukr').mouseenter(function(){
+        $('#Ukraine').css('fill',primaryColor);
+    })
+    $('.ukr').mouseleave(function(){
+        $('#Ukraine').css('fill',mapColor);
+    })
+    $('.ecu').mouseenter(function(){
+        $('#Ecuador').css('fill',secondaryColor);
+    })
+    $('.ecu').mouseleave(function(){
+        $('#Ecuador').css('fill',mapColor);
+    })
+    $('.bot').mouseenter(function(){
+        $('#Botswana').css('fill',secondaryColor);
+    })
+    $('.bot').mouseleave(function(){
+        $('#Botswana').css('fill',mapColor);
+    })
+    $('.pan').mouseenter(function(){
+        $('#Panama').css('fill',secondaryColor);
+    })
+    $('.pan').mouseleave(function(){
+        $('#Panama').css('fill',mapColor);
+    })
+    $('.mya').mouseenter(function(){
+        $('#Myanmar').css('fill',secondaryColor);
+    })
+    $('.mya').mouseleave(function(){
+        $('#Myanmar').css('fill',mapColor);
+    })
+    $('.sen').mouseenter(function(){
+        $('#Senegal').css('fill',secondaryColor);
+    })
+    $('.sen').mouseleave(function(){
+        $('#Senegal').css('fill',mapColor);
+    })
+    $('.mad').mouseenter(function(){
+        $('#Madagascar').css('fill',secondaryColor);
+    })
+    $('.mad').mouseleave(function(){
+        $('#Madagascar').css('fill',mapColor);
+    })
+    $('.uga').mouseenter(function(){
+        $('#Uganda').css('fill',secondaryColor);
+    })
+    $('.uga').mouseleave(function(){
+        $('#Uganda').css('fill',mapColor);
+    })
+    $('.eth').mouseenter(function(){
+        $('#Ethiopia').css('fill',secondaryColor);
+    })
+    $('.eth').mouseleave(function(){
+        $('#Ethiopia').css('fill',mapColor);
+    })
+    $('.sie').mouseenter(function(){
+        $('#Sierra-leone').css('fill',primaryColor);
+    })
+    $('.sie').mouseleave(function(){
+        $('#Sierra-leone').css('fill',mapColor);
+    })
+    $('.cot').mouseenter(function(){
+        $('#Cote-di-vuar').css('fill',primaryColor);
+    })
+    $('.cot').mouseleave(function(){
+        $('#Cote-di-vuar').css('fill',mapColor);
+    })
+    $('.gha').mouseenter(function(){
+        $('#Ghana').css('fill',primaryColor);
+    })
+    $('.gha').mouseleave(function(){
+        $('#Ghana').css('fill',mapColor);
+    })
+    $('.ngr').mouseenter(function(){
+        $('#Nigeria').css('fill',primaryColor);
+    })
+    $('.ngr').mouseleave(function(){
+        $('#Nigeria').css('fill',mapColor);
+    })
+    $('.con').mouseenter(function(){
+        $('#Congo').css('fill',primaryColor);
+    })
+    $('.con').mouseleave(function(){
+        $('#Congo').css('fill',mapColor);
+    })
+    $('.tan').mouseenter(function(){
+        $('#Tanzania').css('fill',primaryColor);
+    })
+    $('.tan').mouseleave(function(){
+        $('#Tanzania').css('fill',mapColor);
+    })
+    $('.zam').mouseenter(function(){
+        $('#Zambia').css('fill',primaryColor);
+    })
+    $('.zam').mouseleave(function(){
+        $('#Zambia').css('fill',mapColor);
+    })
+    $('.aze').mouseenter(function(){
+        $('#Azerbaijan').css('fill',primaryColor);
+    })
+    $('.aze').mouseleave(function(){
+        $('#Azerbaijan').css('fill',mapColor);
+    })
+    $('.sri').mouseenter(function(){
+        $('#Sri-Lanka').css('fill',primaryColor);
+    })
+    $('.sri').mouseleave(function(){
+        $('#Sri-Lanka').css('fill',mapColor);
+    })
+    $('.ban').mouseenter(function(){
+        $('#Bangladesh').css('fill',primaryColor);
+    })
+    $('.ban').mouseleave(function(){
+        $('#Bangladesh').css('fill',mapColor);
+    })
+    //#endregion
     $(document).scroll(function(){
         if(window.scrollY>=200){
             header.css('backgroundColor','white');
             header.css('height',`80px`);
             header.addClass('add-box-shadow');
-            $('.logo__first.w-50.h-100.position-absolute').css('opacity',`0`);
-            $('.logo__second.w-50.h-100.position-absolute').css('opacity',`1`);
+            hamburgerButton.css('backgroundColor','#2D3192');
+
+            $('.logo__first').css('opacity',`0`);
+            $('.logo__second').css('opacity',`1`);
             $('.nav-link').css('color','black');
         }else{
             header.css('backgroundColor','rgba(0,0,0,0)');
             header.css('height',`120px`);
             header.removeClass('add-box-shadow');
-            $('.logo__first.w-50.h-100.position-absolute').css('opacity',`1`);
-            $('.logo__second.w-50.h-100.position-absolute').css('opacity',`0`);
+            $('.logo__first').css('opacity',`1`);
+            $('.logo__second').css('opacity',`0`);
             $('.nav-link').css('color','#eee');
         }
         if(window.scrollY>=700){
-            $('.nav-link.nav-link-1').css('color','#FF931E');
+            $('.nav-link-1').css('color','#FF931E');
         }
     })
     scrollerButton.click(function(){
