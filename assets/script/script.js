@@ -3,22 +3,19 @@ $(document).ready(function(){
     const secondaryColor='#FF931E';
     const mapColor='#E5E9F4';
     const header=$('.header-part');
-    const hamburgerButton=$('.header__hamburger');
-    const scrollerButton=$('.scroll-button__container');
+    const hamburgerButton=$('.hamburger');
     hamburgerButton.click(function(){
-        if(header.children()[0].className==='d-flex flex-wrap header-part__container after-click'){
-            // header.children()[0].classList.add('container');
-            header.children()[0].classList.remove('after-click');
-        }
-        header.children()[0].classList.remove('container');
-        header.children()[0].classList.add('after-click');
-        hamburgerButton.addClass('header__hamburger--active')
+        hamburgerButton.toggleClass('header__hamburger--active');
+        $('.after-click').toggleClass('d-block');
+        $('.header-part__container').toggleClass('container');
+        $('.header-part__container').toggleClass('w-100');
     })
     //#region map circle mouseenter mosueleave events
-    $('.Russia').mouseenter(function(){
+    $('[data-toggle=tooltip]').tooltip();
+    $('.rus').mouseenter(function(){
         $('#Russia').css('fill',primaryColor);
     })
-    $('.Russia').mouseleave(function(){
+    $('.rus').mouseleave(function(){
         $('#Russia').css('fill',mapColor);
     })
     $('.ukr').mouseenter(function(){
@@ -137,28 +134,75 @@ $(document).ready(function(){
     })
     //#endregion
     $(document).scroll(function(){
-        if(window.scrollY>=200){
-            header.css('backgroundColor','white');
-            header.css('height',`80px`);
-            header.addClass('add-box-shadow');
-            hamburgerButton.css('backgroundColor','#2D3192');
-
-            $('.logo__first').css('opacity',`0`);
-            $('.logo__second').css('opacity',`1`);
-            $('.nav-link').css('color','black');
-        }else{
-            header.css('backgroundColor','rgba(0,0,0,0)');
-            header.css('height',`120px`);
-            header.removeClass('add-box-shadow');
-            $('.logo__first').css('opacity',`1`);
-            $('.logo__second').css('opacity',`0`);
-            $('.nav-link').css('color','#eee');
-        }
-        if(window.scrollY>=700){
-            $('.nav-link-1').css('color','#FF931E');
+        if(hamburgerButton.hasClass('header__hamburger--active')==false){
+            if(window.scrollY>=100){
+                header.css('backgroundColor','white');
+                header.css('height',`80px`);
+                header.addClass('add-box-shadow');
+                hamburgerButton.removeClass('header__hamburger');
+                hamburgerButton.addClass('header__hamburger--scroll');
+                $('.logo__first').css('opacity',`0`);
+                $('.logo__second').css('opacity',`1`);
+                $('.nav-link').css('color','black');
+            }else{
+                header.css('backgroundColor','rgba(0,0,0,0)');
+                header.css('height',`120px`);
+                header.removeClass('add-box-shadow');
+                hamburgerButton.addClass('header__hamburger');
+                hamburgerButton.removeClass('header__hamburger--scroll');
+                $('.logo__first').css('opacity',`1`);
+                $('.logo__second').css('opacity',`0`);
+                $('.nav-link').css('color','#eee');
+            }
+            if(window.scrollY>=700 && window.scrollY<2030){
+                $('.nav-link-1').css('color','#FF931E');
+            }else if(window.scrollY>=2030 && window.scrollY<6200){
+                $('.nav-link-2').css('color','#FF931E');
+            }else if(window.scrollY>=6200 && window.scrollY<6800){
+                $('.nav-link-3').css('color','#FF931E');
+            }else if(window.scrollY>=6800 && window.scrollY<7380){
+                $('.nav-link-4').css('color','#FF931E');
+            }else if(window.scrollY>=7380){
+                $('.nav-link-5').css('color','#FF931E');
+            }
+            
         }
     })
-    scrollerButton.click(function(){
-        window.scrollY=`800px`;
+    //#region scroll buttons
+    $('.nav-link-1').click(function(){
+        window.scrollTo(0,700);
+    })
+    $('.scroll-button img').click(function(){
+        window.scrollTo(0,700);
+    })
+    $('.scroll-button span').click(function(){
+        window.scrollTo(0,700);
+    })
+    $('.nav-link-2').click(function(){
+        window.scrollTo(0,2030);
+    })
+    $('.nav-link-3').click(function(){
+        window.scrollTo(0,6200);
+    })
+    $('.nav-link-4').click(function(){
+        window.scrollTo(0,6800);
+    })
+    $('.nav-link-5').click(function(){
+        window.scrollTo(0,7380);
+    })
+    //#endregion
+    document.querySelectorAll('.city-buttons button').forEach(function(value,index){
+        value.addEventListener('click',function(){
+            const activeButton=$('button.active-color');
+            const activeInfo=$('div.active-opacity');
+            activeButton.removeClass('active-color');
+            value.classList.add('active-color');
+            activeInfo.removeClass('active-opacity');
+            document.querySelector('.info-according-city').children[index].classList.add('active-opacity')
+        })
+    })
+    $('.logo').click(function(){
+        window.location.reload();
+        window.scrollTo(0,0);
     })
 })

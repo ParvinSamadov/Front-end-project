@@ -7,13 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <title>Simbrella</title>
 </head>
 
 <body>
     <header class="header-part position-fixed w-100 d-flex align-items-center">
         <div class="container d-flex flex-wrap header-part__container">
-            <div class="row w-100">
+            <div class="row w-100 header-row">
                 <div class="logo col-6 col-lg-4 position-relative">
                     <img src="https://www.simbrella.com/site/templates/img/logo.svg"
                         class="logo__first w-50 h-100 position-absolute"></img>
@@ -23,23 +25,32 @@
                 <div class="col-6 d-flex justify-content-end align-items-start mt-3 mt-lg-0 d-lg-block col-lg-8">
                     <ul class="nav d-none d-lg-flex justify-content-lg-end">
                         <li class="nav-item">
-                            <a class="nav-link nav-link-1" href="#">What we do</a>
+                            <a class="nav-link nav-link-1">What we do</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-2" href="#">Who we are</a>
+                            <a class="nav-link nav-link-2">Who we are</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-3" href="#">Jobs</a>
+                            <a class="nav-link nav-link-3">Jobs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-4" href="#">News</a>
+                            <a class="nav-link nav-link-4">News</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-5" href="#">Contacts</a>
+                            <a class="nav-link nav-link-5">Contacts</a>
                         </li>
                     </ul>
-                    <span class="header__hamburger d-inline-block d-lg-none"></span>
+                    <span class="hamburger header__hamburger d-inline-block d-lg-none"></span>
                 </div>
+            </div>
+            <div class="after-click d-none">
+                <ul class="customized-list-group w-100 text-center text-md-left">
+                    <li class="customized-list-group__items">AI and ML based scoring engine</li>
+                    <li class="customized-list-group__items">End-to-end lending technology</li>
+                    <li class="customized-list-group__items">High-performing and secure operating platform</li>
+                    <li class="customized-list-group__items">Fast and consistent decision making</li>
+                    <li class="customized-list-group__items">Flexible customizable solution</li>
+                </ul>
             </div>
         </div>
     </header>
@@ -57,8 +68,8 @@
             </div>
             <div class="scroll-button d-none d-md-block col-7 mr-auto mb-5 align-self-end">
                 <div class="scroll-button__container text-light d-flex">
-                    <img src="https://www.simbrella.com/site/templates/img/mouse_icon.svg" alt="scroll">
-                    <span class="scroll-button__container--txt align-self-center ml-2">
+                    <img src="https://www.simbrella.com/site/templates/img/mouse_icon.svg" style="cursor:pointer" alt="scroll">
+                    <span class="scroll-button__container--txt align-self-center ml-2" style="cursor:pointer">
                         Scroll to discover us!
                     </span>
                 </div>
@@ -79,7 +90,7 @@
                     <div class="col-12 d-md-flex flex-md-wrap justify-content-md-between">
                         <a href="#" class="text-decoration-none cards-containers">
                             <div class="card w-100 custom-cards h-100 mb-3 mb-md-0" style="width: 18rem;">
-                                <img class="card-img-top customized-img"
+                                <img class="card-img-top height-sm-for-card-image customized-img "
                                     src="https://www.simbrella.com/site/assets/files/1043/1.svg" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">AI & ML based scoring</h5>
@@ -90,7 +101,7 @@
                         </a>
                         <a href="#" class="text-decoration-none cards-containers">
                             <div class="card w-100 custom-cards h-100 mb-3 mb-md-0" style="width: 18rem;">
-                                <img class="card-img-top customized-img"
+                                <img class="card-img-top height-sm-for-card-image customized-img "
                                     src="https://www.simbrella.com/site/assets/files/1044/2_1.svg" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">Micro-lending technology</h5>
@@ -101,7 +112,7 @@
                         </a>
                         <a href="#" class="text-decoration-none cards-containers">
                             <div class="card w-100 custom-cards h-100 mb-3 mb-md-0" style="width: 18rem;">
-                                <img class="card-img-top customized-img"
+                                <img class="card-img-top height-sm-for-card-image customized-img "
                                     src="https://www.simbrella.com/site/assets/files/1045/3-1.svg" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">Big data engine</h5>
@@ -141,7 +152,7 @@
                 <div
                     class="col-md-12 pt-md-5 pb-md-5 mt-md-4 mb-md-4 border-md-who-we-are d-md-flex flex-md-wrap justify-content-md-between">
                     <div class="col-md-4">
-                        <h1 class="statistics">220Million</h1>
+                        <h1 class="statistics million"></h1>
                         <p>END USERS SERVED GLOBALLY</p>
                     </div>
                     <div class="col-md-4">
@@ -2184,22 +2195,22 @@
 
 
                         <circle opacity="0.3" cx="708" cy="296" r="10" data-fill="#2D3192" fill="#2D3192"
-                            data-city="Russia" class="Russia"></circle>
+                            data-city="Russia" class="rus" data-toggle="tooltip" data-placement="top" title="Russia"></circle>
                         <path opacity="0.3"
                             d="M708 306C713.523 306 718 301.523 718 296C718 290.477 713.523 286 708 286V306Z"
-                            class="half Russia" data-fill="#FF931E" fill="#FF931E" data-city="RU"></path>
+                            class="half rus" data-fill="#FF931E" fill="#FF931E" data-city="RU" data-toggle="tooltip" data-placement="top" title="Russia"></path>
                         <g filter="url(#filter01_d)">
-                            <circle cx="708" cy="296" r="3" class="Russia" data-fill="#2D3192" fill="#2D3192" data-city="RU"></circle>
+                            <circle cx="708" cy="296" r="3" class="rus" data-fill="#2D3192" fill="#2D3192" data-city="RU"></circle>
                         </g>
                         <path d="M708 299C709.657 299 711 297.657 711 296C711 294.343 709.657 293 708 293V299Z"
-                            class="half Russia" data-fill="#FF931E" fill="#FF931E" data-city="RU"></path>
+                            class="half rus" data-fill="#FF931E" fill="#FF931E" data-city="RU"></path>
 
 
                         <circle opacity="0.3" cx="710" cy="393" r="10" data-fill="#2D3192" fill="#2D3192"
-                            data-city="Azerbaijan" class="aze"></circle>
+                            data-city="Azerbaijan" class="aze" data-toggle="tooltip" data-placement="top" title="Azerbaijan"></circle>
                         <path opacity="0.3"
                             d="M710 403C715.523 403 720 398.523 720 393C720 387.477 715.523 383 710 383V403Z"
-                            class="half aze" data-fill="#FF931E" fill="#FF931E" data-city="AZ"></path>
+                            class="half aze" data-fill="#FF931E" fill="#FF931E" data-city="AZ" data-toggle="tooltip" data-placement="top" title="Azerbaijan"></path>
                         <g filter="url(#filter1_d)">
                             <circle cx="710" cy="393" r="3" class="aze" data-fill="#2D3192" fill="#2D3192" data-city="AZ"></circle>
                         </g>
@@ -2208,16 +2219,16 @@
 
 
                         <circle opacity="0.3" cx="652" cy="353" r="10" data-fill="#2D3192" fill="#2D3192"
-                            data-city="UA" class="ukr"></circle>
+                            data-city="UA" class="ukr" data-toggle="tooltip" data-placement="top" title="Ukraine"></circle>
                         <g filter="url(#filter016_d)">
                             <circle cx="652" cy="353" r="3" data-fill="#2D3192" fill="#2D3192" class="ukr" data-city="UA"></circle>
                         </g>
 
                         <circle opacity="0.3" cx="532" cy="511" r="10" data-fill="#2D3192" fill="#2D3192"
-                            data-city="CI" class="cot"></circle>
+                            data-city="CI" class="cot" data-toggle="tooltip" data-placement="top" title="Cote di Vuar"></circle>
                         <path opacity="0.3"
                             d="M532 521C537.523 521 542 516.523 542 511C542 505.477 537.523 501 532 501V521Z"
-                            class="half cot" data-fill="#FF931E" fill="#FF931E" data-city="CI"></path>
+                            class="half cot" data-fill="#FF931E" fill="#FF931E" data-city="CI" data-toggle="tooltip" data-placement="top" title="Cote di Vuar"></path>
                         <g filter="url(#filter3_d)">
                             <circle cx="532" class="cot" cy="511" r="3" fill="#2D3192" data-fill="#2D3192" data-city="CI"></circle>
                         </g>
@@ -2225,10 +2236,10 @@
                             class="half cot" data-fill="#FF931E" fill="#FF931E" data-city="CI"></path>
 
                         <circle opacity="0.3" cx="511" cy="508" r="10" data-fill="#2D3192" fill="#2D3192"
-                            data-city="SL" class="sie"></circle>
+                            data-city="SL" class="sie" data-toggle="tooltip" data-placement="top" title="Sierra Leone"></circle>
                         <path opacity="0.3"
                             d="M511 518C516.523 518 521 513.523 521 508C521 502.477 516.523 498 511 498V518Z"
-                            class="half sie" data-fill="#FF931E" fill="#FF931E" data-city="SL"></path>
+                            class="half sie" data-fill="#FF931E" fill="#FF931E" data-city="SL" data-toggle="tooltip" data-placement="top" title="Sierra Leone"></path>
                         <g filter="url(#filter4_d)">
                             <circle cx="511" cy="508" r="3" data-fill="#2D3192" class="sie" fill="#2D3192" data-city="SL"></circle>
                         </g>
@@ -2236,10 +2247,10 @@
                             class="half sie" data-fill="#FF931E" fill="#FF931E" data-city="SL"></path>
 
                         <circle opacity="0.3" cx="574" cy="507" r="10" data-fill="#2D3192" fill="#2D3192"
-                            data-city="NG" class="ngr"></circle>
+                            data-city="NG" class="ngr" data-toggle="tooltip" data-placement="top" title="Nigeria"></circle>
                         <path opacity="0.3"
                             d="M574 517C579.523 517 584 512.523 584 507C584 501.477 579.523 497 574 497V517Z"
-                            class="half ngr" data-fill="#FF931E" fill="#FF931E" data-city="NG"></path>
+                            class="half ngr" data-fill="#FF931E" fill="#FF931E" data-city="NG" data-toggle="tooltip" data-placement="top" title="Nigeria"></path>
                         <g filter="url(#filter5_d)">
                             <circle cx="574" cy="507" r="3" class="ngr" fill="#2D3192" data-fill="#2D3192" data-city="NG"></circle>
                         </g>
@@ -2247,10 +2258,10 @@
                             class="half ngr" data-fill="#FF931E" fill="#FF931E" data-city="NG"></path>
 
                         <circle opacity="0.3" cx="638" cy="581" r="10" data-fill="#2D3192" fill="#2D3192"
-                            data-city="ZM" class="zam"></circle>
+                            data-city="ZM" class="zam" data-toggle="tooltip" data-placement="top" title="Zambia"></circle>
                         <path opacity="0.3"
                             d="M638 591C643.523 591 648 586.523 648 581C648 575.477 643.523 571 638 571V591Z"
-                            class="half zam" data-fill="#FF931E" fill="#FF931E" data-city="ZM"></path>
+                            class="half zam" data-fill="#FF931E" fill="#FF931E" data-city="ZM" data-toggle="tooltip" data-placement="top" title="Zambia"></path>
                         <g filter="url(#filter6_d)">
                             <circle cx="638" cy="581" r="3" class="zam" data-fill="#2D3192" fill="#2D3192" data-city="ZM"></circle>
                         </g>
@@ -2258,7 +2269,7 @@
                             class="half zam" data-fill="#FF931E" fill="#FF931E" data-city="ZM"></path>
 
                         <circle opacity="0.3" cx="862" cy="463" r="10" data-fill="#FF931E" fill="#FF931E"
-                            data-city="MM" class="mya"></circle>
+                            data-city="MM" class="mya" data-toggle="tooltip" data-placement="top" title="Myanmar"></circle>
 
                         <g filter="url(#filter7_d)">
                             <circle cx="862"  class="mya" cy="463" r="3" data-fill="#FF931E" fill="#FF931E" data-city="MM"></circle>
@@ -2267,73 +2278,73 @@
                             class="half mya" data-fill="#FF931E" fill="#FF931E" data-city="MM"></path>
 
                         <circle opacity="0.3" cx="294" cy="541" r="10" data-fill="#FF931E" fill="#FF931E"
-                            data-city="EC" class="ecu" ></circle>
+                            data-city="EC" class="ecu" data-toggle="tooltip" data-placement="top" title="Ecuador"></circle>
                         <g filter="url(#filter8_d)">
                             <circle cx="294" cy="541" r="3" class="ecu" data-fill="#FF931E" fill="#FF931E" data-city="EC"></circle>
                         </g>
 
                         <circle opacity="0.3" cx="284" cy="507" r="10" data-fill="#FF931E" fill="#FF931E"
-                            data-city="PA" class="pan"></circle>
+                            data-city="PA" class="pan" data-toggle="tooltip" data-placement="top" title="Panama"></circle>
                         <g filter="url(#filter9_d)">
                             <circle cx="284" cy="507" r="3" data-fill="#FF931E" fill="#FF931E" class="pan" data-city="PA"></circle>
                         </g>
 
                         <circle opacity="0.3" cx="500" cy="488" r="10" data-fill="#FF931E" fill="#FF931E"
-                            data-city="SN" class="sen"></circle>
+                            data-city="SN" class="sen" data-toggle="tooltip" data-placement="top" title="Senegal"></circle>
                         <g filter="url(#filter10_d)">
                             <circle cx="500" cy="488" r="3" data-fill="#FF931E" class="sen" fill="#FF931E" data-city="SN"></circle>
                         </g>
 
                         <circle opacity="0.3" cx="655" cy="531" r="10" data-fill="#FF931E" fill="#FF931E"
-                            data-city="UG" class="uga"></circle>
+                            data-city="UG" class="uga" data-toggle="tooltip" data-placement="top" title="Uganda"></circle>
                         <g filter="url(#filter11_d)">
                             <circle cx="655" cy="531" r="3" data-fill="#FF931E" fill="#FF931E" class="uga" data-city="UG"></circle>
                         </g>
 
                         <circle opacity="0.3" cx="676" cy="508" r="10" data-fill="#FF931E" fill="#FF931E"
-                            data-city="ET" class="eth"></circle>
+                            data-city="ET" class="eth" data-toggle="tooltip" data-placement="top" title="Ethiopia"></circle>
                         <g filter="url(#filter12_d)">
                             <circle cx="676" cy="508" r="3" data-fill="#FF931E" class="eth" fill="#FF931E" data-city="ET"></circle>
                         </g>
 
                         <circle opacity="0.3" cx="701" cy="599" r="10" data-fill="#FF931E" fill="#FF931E"
-                            data-city="MG" class="mad"></circle>
+                            data-city="MG" class="mad" data-toggle="tooltip" data-placement="top" title="Madagascar"></circle>
                         <g filter="url(#filter13_d)">
                             <circle cx="701" cy="599" r="3" data-fill="#FF931E" class="mad" fill="#FF931E" data-city="MG"></circle>
                         </g>
 
                         <circle opacity="0.3" cx="627" cy="608" r="10" data-fill="#FF931E" fill="#FF931E"
-                            data-city="BW" class="bot"></circle>
+                            data-city="BW" class="bot" data-toggle="tooltip" data-placement="top" title="Botswana"></circle>
                         <g filter="url(#filter14_d)">
                             <circle cx="627" cy="608" r="3" data-fill="#FF931E" fill="#FF931E" data-city="BW" class="bot"></circle>
                         </g>
 
                         <circle opacity="0.3" cx="595" cy="543" r="10" data-fill="#2D3192" fill="#2D3192"
-                            data-city="CD" class="con"></circle>
+                            data-city="CD" class="con" data-toggle="tooltip" data-placement="top" title="Congo Democratic Republic"></circle>
                         <g filter="url(#filter15_d)">
                             <circle cx="595" cy="543" r="3" data-fill="#2D3192" fill="#2D3192" data-city="CD" class="con"></circle>
                         </g>
 
                         <circle opacity="0.3" cx="663" cy="555" r="10" data-fill="#2D3192" fill="#2D3192"
-                            data-city="TZ" class="tan"></circle>
+                            data-city="TZ" class="tan" data-toggle="tooltip" data-placement="top" title="Tanzania"></circle>
                         <g filter="url(#filter16_d)">
                             <circle cx="663" cy="555" r="3" data-fill="#2D3192" fill="#2D3192" data-city="TZ" class="tan"></circle>
                         </g>
 
                         <circle opacity="0.3" cx="812" cy="511" r="10" data-fill="#2D3192" fill="#2D3192"
-                            data-city="LK" class="sri"></circle>
+                            data-city="LK" class="sri" data-toggle="tooltip" data-placement="top" title="Sri-lanka"></circle>
                         <g filter="url(#filter17_d)">
                             <circle cx="812" cy="511" r="3" data-fill="#2D3192" fill="#2D3192" data-city="LK" class="sri"></circle>
                         </g>
 
                         <circle opacity="0.3" cx="841" cy="455" r="10" data-fill="#2D3192" fill="#2D3192"
-                            data-city="BD" class="ban"></circle>
+                            data-city="BD" class="ban" data-toggle="tooltip" data-placement="top" title="Bangladesh"></circle>
                         <g filter="url(#filter18_d)">
                             <circle cx="841" cy="455" r="3" data-fill="#2D3192" fill="#2D3192" data-city="BD" class="ban"></circle>
                         </g>
 
                         <circle opacity="0.3" cx="547" cy="505" r="10" data-fill="#2D3192" fill="#2D3192"
-                            data-city="GH" class="gha"></circle>
+                            data-city="GH" class="gha" data-toggle="tooltip" data-placement="top" title="Ghana"></circle>
                         <path opacity="0.3"
                             d="M547 515C552.523 515 557 510.523 557 505C557 499.477 552.523 495 547 495V515Z"
                             class="half gha" data-fill="#FF931E" fill="#FF931E" data-city="GH"></path>
@@ -2664,7 +2675,6 @@
                     <p class="col-6 col-sm-4 font-weight-bold font-sm-size__body">Panama</p>
                     <p class="col-6 col-sm-4 font-weight-bold font-sm-size__body">Russia</p>
                     <p class="col-6 col-sm-4 font-weight-bold font-sm-size__body">Cote-di-vuar</p>
-                    <p class="col-6 col-sm-4 font-weight-bold font-sm-size__body">Russia</p>
                 </div>
                 <div class="col-12 d-flex flex-wrap countries-list">
                     <div class="col-12 mb-4 mt-4">
@@ -2730,7 +2740,7 @@
                         <img src="https://www.simbrella.com/site/assets/files/1/34.svg" alt="MTN">
                     </div>
                     <div class="ccol-sm-6 ccol-md-4 ccol-lg-3 d-flex justify-content-center align-items-center clients">
-                        <h3 class="w-75">& over 15 more clients</h3>
+                        <h3 class="w-75 font-sm-size__header">& over 15 more clients</h3>
                     </div>
                 </div>
             </div>
@@ -2935,7 +2945,7 @@
             <div class="row">
                 <div class="col-12 text-transform-capitalize font-color mb-4">
                     <h1 class="font-sm-size__header">
-                        Executive team
+                        Work with us
                     </h1>
                 </div>
                 <div class="col-12 d-flex flex-wrap justify-content-between">
@@ -2958,7 +2968,7 @@
                     <div class="col-12 col-lg-6 mt-lg-5 mb-lg-4 margin-for-vacancies d-flex flex-column p-5 vacancies-part rounded">
                         <h3 class="mb-3 text-light font-sm-size__header">Become part of our team</h3>
                         <p class="mb-3 text-light font-sm-size__body">We are looking for passionate and talented people to join our growing team. If you want to find out your highest heart rate and fill up your life with passion, then welcome to Simbrella.</p>
-                        <a href="#" class="btn col-9 ccol-md-btn text-light button-for-vacancies font-sm-size__body">All vacancies
+                        <a href="#" class="btn text-light button-for-vacancies font-sm-size__body" style="width:200px">All vacancies
                             <img src="https://www.simbrella.com/site/templates/img/link_orange_icon.svg" class="ml-5"
                                 alt="">
                         </a>
@@ -2971,15 +2981,15 @@
             <div class="row">
                 <div class="col-12 header-latest-news d-flex flex-wrap justify-content-between mb-5">
                     <h2 class="font-sm-size__header font-color">Latest news</h2>
-                    <a href="#" class="btn btn-lg header-latest-news-button">Read news
+                    <a href="./read-news-page.html" target="_blank" class="btn btn-lg header-latest-news-button">Read news
                         <img src="https://www.simbrella.com/site/templates/img/link_orange_icon.svg" class="ml-5"
                             alt="">
                     </a>
                 </div>
                 <div class="col-12 d-md-flex flex-md-wrap justify-content-md-between">
-                    <a href="#" class="text-decoration-none news-containers">
+                    <a href="./news-from-sierra.html" class="text-decoration-none news-containers">
                         <div class="card w-100 custom-cards border-0 mb-3 mb-md-0" style="width: 18rem;">
-                            <img class="card-img-top customized-img"
+                            <img class="card-img-top"
                                 src="https://www.simbrella.com/site/assets/files/1195/final.png" alt="Card image cap">
                             <div class="card-body pl-0 pr-0">
                                 <h6 class="card-title font-sm-size__header">Simbrella launches "Lajor" - digital micro-lending product for Orange Money mobile wallets in Sierra Leone.</h6>
@@ -2987,9 +2997,9 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="text-decoration-none news-containers">
+                    <a href="./news-from-myanmar.html" class="text-decoration-none news-containers">
                         <div class="card w-100 custom-cards border-0 mb-3 mb-md-0" style="width: 18rem;">
-                            <img class="card-img-top customized-img"
+                            <img class="card-img-top"
                                 src="https://www.simbrella.com/site/assets/files/1094/40_1.jpg" alt="Card image cap">
                             <div class="card-body pl-0 pr-0">
                                 <h6 class="card-title font-sm-size__header">Simbrella announces launch in South-East Asia via microlending partnership with MPT Myanmar.</h6>
@@ -2997,9 +3007,9 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="text-decoration-none news-containers">
+                    <a href="./news-from-nigeria.html" class="text-decoration-none news-containers">
                         <div class="card w-100 custom-cards border-0 mb-3 mb-md-0" style="width: 18rem;">
-                            <img class="card-img-top customized-img"
+                            <img class="card-img-top"
                                 src="https://www.simbrella.com/site/assets/files/1167/fcmb-final.png" alt="Card image cap">
                             <div class="card-body pl-0 pr-0">
                                 <h6 class="card-title font-sm-size__header">Simbrella launched FinTech partnership with First City Monument Bank (FCMB) in February 2020.</h6>
@@ -3011,13 +3021,55 @@
             </div>
         </div>
     </section>
-    <footer class="end-of-page">
+    <footer class="end-of-page mt-4 pt-4 pb-4">
         <div class="container">
             <div class="row">
-                
+                <div class="col-12 header-of-contacts d-flex flex-wrap justify-content-between mb-5">
+                    <h2 class="col-md-3 col-12 mb-0 font-sm-size__header text-light pt-md-4">Contacts</h2>
+                    <div class="col-md-6 col-12 p-2 p-md-3 mb-md-3 mb-2 mt-2 mt-md-3 city-buttons">
+                        <button id="Amsterdam" class="pr-md-0 pl-2 pl-md-0 pr-2 active-color font-sm-size__header border-0 mr-0 mr-md-0 mr-lg-4 pr-lg-4">Amsterdam</button>
+                        <button id="Baku" class="pr-2 pr-md-2 font-sm-size__header pl-2 pl-md-2 mr-0 mr-md-0 pl-lg-4 mr-lg-4 pr-lg-4">Baku</button>
+                        <button id="Singapore" class="font-sm-size__header pl-2 pl-md-0 pl-lg-4 border-0  ">Singapore</button>
+                    </div>
+                    <div class="col-md-3 mt-2 mt-md-0 col-12 pt-md-4">
+                        <a href="#" class="btn btn-lg branches-button">Our branches
+                            <img src="https://www.simbrella.com/site/templates/img/link_orange_icon.svg" class="ml-5"
+                                alt="">
+                        </a>
+                    </div>
+                </div> 
+                <div class="col-12 w-100 d-flex justify-content-end position-relative info-according-city">
+                    <div class="col-lg-8 active-opacity contact-content for-amsterdam position-absolute fixed-top">
+                        <ul>
+                            <li class="mb-lg-3 mb-1">Headquarters</li>
+                            <li class="mb-lg-5 mb-3">Kabelweg 21, 1014BA Amsterdam, the Netherlands</li>
+                            <li class="mb-lg-3 mb-1">E-mail</li>
+                            <li class="mb-lg-5 mb-3">amsterdam@simbrella.com</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-8 contact-content for-baku position-absolute fixed-top">
+                        <ul>
+                            <li class="mb-lg-3 mb-1">Headquarters</li>
+                            <li class="mb-lg-5 mb-3">Jalil Mammadguluzadeh st. 102 A, City Point Business Centre, AZ1022, Baku, Azerbaijan</li>
+                            <li class="mb-lg-3 mb-1">E-mail</li>
+                            <li class="mb-lg-5 mb-3">baku@simbrella.com</li>
+                            <li class="mb-lg-3 mb-1">Contact number</li>
+                            <li class="mb-lg-5 mb-3">+994 12 404 31 32</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-8 contact-content for-singapore position-absolute fixed-top">
+                        <ul>
+                            <li class="mb-lg-3 mb-1">APAC Region Office</li>
+                            <li class="mb-lg-5 mb-3">100 Beach Road № 22-13, Shaw Towers, 189702, Singapore</li>
+                            <li class="mb-lg-3 mb-1">E-mail</li>
+                            <li class="mb-lg-5 mb-3">singapore@simbrella.com</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
+    <div class="col-12 copyright-footer align-self-end p-4">Copyright © 2021. All rights reserved.</div>
     <script src="./assets/script/script.js"></script>
 </body>
 

@@ -3,31 +3,26 @@
         height: 100vh;
         background-position: 60% 50%;
     }
-        .font-sm-size__header{
-            font-size: $base*5 !important;
-        }
-        .font-sm-size__body{
-            font-size: $base*3 !important;
-        }
-        .ccol-sm-6{
-            width: calc(50% - 9px);
-        }
-}
-@media screen and (max-width: 1168px){
-    .map-container{
-        svg{
-            height: 100% !important;
-            width: 100% !important;
-        }
+    .height-sm-for-card-image{
+        height: 180px !important;
     }
-}
-@media screen and (min-width: 1202px){
-    .margin-for-vacancies{
-        margin-left: -$base*12;
+    .h-sm-270{
+        height: 270px;
     }
-
+    .font-sm-size__header{
+        font-size: $base*5 !important;
+    }
+    .font-sm-size__body{
+        font-size: $base*3 !important;
+    }
+    .ccol-sm-6{
+        width: calc(50% - 9px);
+    }
 }
 @media screen and (min-width: 768px){
+    .customized-img{
+        height: 230px !important;
+    }
     .height-lg-special{
         min-height: calc(100vh - 80px) !important;
     }
@@ -115,8 +110,30 @@
     .ccol-md-4{
         width: calc(33.3% - 9px);
     }
-    // .ccol-md-btn{
-    // }
+    .end-of-page{
+        min-height: calc(100vh - 80px);
+
+    }
+}
+@media screen and (max-width: 1023px){
+    .end-of-page{
+        height: 100vh;
+    }
+    .contact-content{
+        ul{
+            list-style-type: none !important;
+            li:nth-child(2n+1){
+                color: rgba(255, 255, 255, 0.5);
+                font-size: $base*4-2;
+                font-weight: 500;
+            }
+            li:nth-child(2n){
+                color: white;
+                font-size: $base*4;
+                font-weight: 500;
+            }
+        }
+    }
 }
 @media screen and (min-width: 1023px){
     .bottom-of-header{
@@ -159,9 +176,38 @@
             }
         }
     }
+    .contact-content{
+        ul{
+            list-style-type: none !important;
+            li:nth-child(2n+1){
+                color: rgba(255, 255, 255, 0.5);
+                font-size: $base*4+2;
+                font-weight: 500;
+            }
+            li:nth-child(2n){
+                color: white;
+                font-size: $base*5;
+                font-weight: 500;
+            }
+        }
+    }
 }
 @media screen and (min-width: 1168px){
     .ccol-lg-3{
         width: calc(25% - 9px);
     }
+}
+@media screen and (max-width: 1168px){
+    .map-container{
+        svg{
+            height: 100% !important;
+            width: 100% !important;
+        }
+    }
+}
+@media screen and (min-width: 1202px){
+    .margin-for-vacancies{
+        margin-left: -$base*12;
+    }
+
 }
