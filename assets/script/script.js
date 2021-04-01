@@ -61,17 +61,24 @@ $(document).ready(function(){
                 $('.logo__second').css('opacity',`0`);
                 $('.nav-link').css('color','#eee');
             }
-            if(window.scrollY>=700 && window.scrollY<2030){
-                $('.nav-link-1').css('color','#FF931E');
-            }
-            else if(window.scrollY>=2030 && window.scrollY<6200){
-                $('.nav-link-2').css('color','#FF931E');
-            }else if(window.scrollY>=6200 && window.scrollY<6800){
-                $('.nav-link-3').css('color','#FF931E');
-            }else if(window.scrollY>=6800 && window.scrollY<7380){
-                $('.nav-link-4').css('color','#FF931E');
-            }else if(window.scrollY>=7380){
-                $('.nav-link-5').css('color','#FF931E');
+            switch (true) {
+                case window.scrollY>=700 && window.scrollY<2030:
+                    $('.nav-link-1').css('color','#FF931E');
+                    break;
+                case window.scrollY>=2030 && window.scrollY<6200:
+                    $('.nav-link-2').css('color','#FF931E');
+                    break;
+                case window.scrollY>=6200 && window.scrollY<6800:
+                    $('.nav-link-3').css('color','#FF931E');
+                    break;
+                case window.scrollY>=6800 && window.scrollY<7380:
+                    $('.nav-link-4').css('color','#FF931E');
+                    break;
+                case window.scrollY>=7380:
+                    $('.nav-link-5').css('color','#FF931E');
+                    break;
+                default:
+                    break;
             }
             
         }
