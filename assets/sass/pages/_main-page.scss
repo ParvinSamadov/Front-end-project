@@ -13,6 +13,9 @@
 .add-box-shadow{
     box-shadow: #efefef 0px 1px 2px 1px;
 }
+.active-color{
+    color: $secondary-color !important;
+}
 .header-part{
     top: 0;
     height: 110px;
@@ -26,6 +29,7 @@
         position: absolute;
         background: #2D3192;
         width: 100%;
+        transition: .5s;
     }
     &__container{
         .row{
@@ -287,6 +291,7 @@
                 .col-md-4{
                     .statistics{
                         font-size: $base*6;
+                        font-weight: 600;
                         color: $secondary-color;
                     }
                     .statistics+p{
@@ -495,9 +500,6 @@
             border-top: 0;
             border-bottom: 0;
         }
-        .active-color{
-            color: $secondary-color !important;
-        }
         .branches-button{
             border-radius: $base*3-1 !important;
             border: 3px solid #cccccc;
@@ -514,20 +516,7 @@
             transition: .2s;
             }
         }
-    }
-    .for-amsterdam{
-        opacity: 0;
-    }
-    .for-singapore{
-        opacity: 0;
-    }
-    .for-baku{
-        opacity: 0;
-    }
-    .active-opacity{
-        opacity: 1;
-    }
-    
+    } 
 }
 .copyright-footer{
     background-color: black;

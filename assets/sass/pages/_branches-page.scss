@@ -1,0 +1,37 @@
+.content-of-branches{
+    background-color: #F6F8FE;
+    .branches-card{
+        &-body{
+            min-height: 410px;
+            padding: 40px 40px 40px;
+            border: 1px solid #E6E6E6;
+            background-color: white !important;
+            background-repeat: no-repeat !important;
+            background-position: calc(100% - 40px) calc(100% - 40px) !important;
+            border-radius: 4px;
+            .city-name__header{
+                font-size: $base*6;
+            }
+            .address-of-branches{
+                ul{
+                    font-weight: 600;
+                    list-style-type: none !important;
+                    li:nth-child(2n){
+                        min-height: 72px;
+                        padding: 0 0 24px;
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 1.5;
+                        color: #000;
+                    }
+                    li:nth-child(2n+1){
+                        padding: 0 0 8px;
+                        font-size: 14px;
+                        line-height: 1.71;
+                        color: #99A3B2;
+                    }
+                }
+            }
+        }
+    }
+}

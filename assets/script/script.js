@@ -9,128 +9,35 @@ $(document).ready(function(){
         $('.after-click').toggleClass('d-block');
         $('.header-part__container').toggleClass('container');
         $('.header-part__container').toggleClass('w-100');
+        if(window.scrollY<=100 && hamburgerButton.hasClass('header__hamburger--active')==true){
+            header.css('background-color',primaryColor);
+            header.css('transition','0s');
+        }else{
+            header.css('background-color','transparent');
+            header.css('transition','.5s');
+        }
     })
     //#region map circle mouseenter mosueleave events
     $('[data-toggle=tooltip]').tooltip();
-    $('.rus').mouseenter(function(){
-        $('#Russia').css('fill',primaryColor);
+    document.querySelectorAll('.countries-circle').forEach(circle=>{
+        circle.addEventListener('mouseenter',function(){
+            document.querySelector(circle.getAttribute('data-id')).style.fill=primaryColor;
+        })
     })
-    $('.rus').mouseleave(function(){
-        $('#Russia').css('fill',mapColor);
+    document.querySelectorAll('.countries-circle').forEach(circle=>{
+        circle.addEventListener('mouseleave',function(){
+            document.querySelector(circle.getAttribute('data-id')).style.fill=mapColor;
+        })
     })
-    $('.ukr').mouseenter(function(){
-        $('#Ukraine').css('fill',primaryColor);
+    document.querySelectorAll('.countries-circle-orange').forEach(circle=>{
+        circle.addEventListener('mouseenter',function(){
+            document.querySelector(circle.getAttribute('data-id')).style.fill=secondaryColor;
+        })
     })
-    $('.ukr').mouseleave(function(){
-        $('#Ukraine').css('fill',mapColor);
-    })
-    $('.ecu').mouseenter(function(){
-        $('#Ecuador').css('fill',secondaryColor);
-    })
-    $('.ecu').mouseleave(function(){
-        $('#Ecuador').css('fill',mapColor);
-    })
-    $('.bot').mouseenter(function(){
-        $('#Botswana').css('fill',secondaryColor);
-    })
-    $('.bot').mouseleave(function(){
-        $('#Botswana').css('fill',mapColor);
-    })
-    $('.pan').mouseenter(function(){
-        $('#Panama').css('fill',secondaryColor);
-    })
-    $('.pan').mouseleave(function(){
-        $('#Panama').css('fill',mapColor);
-    })
-    $('.mya').mouseenter(function(){
-        $('#Myanmar').css('fill',secondaryColor);
-    })
-    $('.mya').mouseleave(function(){
-        $('#Myanmar').css('fill',mapColor);
-    })
-    $('.sen').mouseenter(function(){
-        $('#Senegal').css('fill',secondaryColor);
-    })
-    $('.sen').mouseleave(function(){
-        $('#Senegal').css('fill',mapColor);
-    })
-    $('.mad').mouseenter(function(){
-        $('#Madagascar').css('fill',secondaryColor);
-    })
-    $('.mad').mouseleave(function(){
-        $('#Madagascar').css('fill',mapColor);
-    })
-    $('.uga').mouseenter(function(){
-        $('#Uganda').css('fill',secondaryColor);
-    })
-    $('.uga').mouseleave(function(){
-        $('#Uganda').css('fill',mapColor);
-    })
-    $('.eth').mouseenter(function(){
-        $('#Ethiopia').css('fill',secondaryColor);
-    })
-    $('.eth').mouseleave(function(){
-        $('#Ethiopia').css('fill',mapColor);
-    })
-    $('.sie').mouseenter(function(){
-        $('#Sierra-leone').css('fill',primaryColor);
-    })
-    $('.sie').mouseleave(function(){
-        $('#Sierra-leone').css('fill',mapColor);
-    })
-    $('.cot').mouseenter(function(){
-        $('#Cote-di-vuar').css('fill',primaryColor);
-    })
-    $('.cot').mouseleave(function(){
-        $('#Cote-di-vuar').css('fill',mapColor);
-    })
-    $('.gha').mouseenter(function(){
-        $('#Ghana').css('fill',primaryColor);
-    })
-    $('.gha').mouseleave(function(){
-        $('#Ghana').css('fill',mapColor);
-    })
-    $('.ngr').mouseenter(function(){
-        $('#Nigeria').css('fill',primaryColor);
-    })
-    $('.ngr').mouseleave(function(){
-        $('#Nigeria').css('fill',mapColor);
-    })
-    $('.con').mouseenter(function(){
-        $('#Congo').css('fill',primaryColor);
-    })
-    $('.con').mouseleave(function(){
-        $('#Congo').css('fill',mapColor);
-    })
-    $('.tan').mouseenter(function(){
-        $('#Tanzania').css('fill',primaryColor);
-    })
-    $('.tan').mouseleave(function(){
-        $('#Tanzania').css('fill',mapColor);
-    })
-    $('.zam').mouseenter(function(){
-        $('#Zambia').css('fill',primaryColor);
-    })
-    $('.zam').mouseleave(function(){
-        $('#Zambia').css('fill',mapColor);
-    })
-    $('.aze').mouseenter(function(){
-        $('#Azerbaijan').css('fill',primaryColor);
-    })
-    $('.aze').mouseleave(function(){
-        $('#Azerbaijan').css('fill',mapColor);
-    })
-    $('.sri').mouseenter(function(){
-        $('#Sri-Lanka').css('fill',primaryColor);
-    })
-    $('.sri').mouseleave(function(){
-        $('#Sri-Lanka').css('fill',mapColor);
-    })
-    $('.ban').mouseenter(function(){
-        $('#Bangladesh').css('fill',primaryColor);
-    })
-    $('.ban').mouseleave(function(){
-        $('#Bangladesh').css('fill',mapColor);
+    document.querySelectorAll('.countries-circle-orange').forEach(circle=>{
+        circle.addEventListener('mouseleave',function(){
+            document.querySelector(circle.getAttribute('data-id')).style.fill=mapColor;
+        })
     })
     //#endregion
     $(document).scroll(function(){
@@ -156,7 +63,8 @@ $(document).ready(function(){
             }
             if(window.scrollY>=700 && window.scrollY<2030){
                 $('.nav-link-1').css('color','#FF931E');
-            }else if(window.scrollY>=2030 && window.scrollY<6200){
+            }
+            else if(window.scrollY>=2030 && window.scrollY<6200){
                 $('.nav-link-2').css('color','#FF931E');
             }else if(window.scrollY>=6200 && window.scrollY<6800){
                 $('.nav-link-3').css('color','#FF931E');
@@ -168,6 +76,25 @@ $(document).ready(function(){
             
         }
     })
+    // dinamically increases the count it works after refresh
+    $('.counter').each(function() {
+        let $this = $(this),
+            countTo = $this.attr('data-count');
+    
+        $({ countNum: $this.text()}).animate({
+            countNum: countTo
+        },
+        {
+            duration: 3000,
+            easing:'linear',
+            step: function() {
+                $this.text(Math.floor(this.countNum)+ $this.attr('data-text'));
+            },
+            complete: function() {
+                $this.text(Math.floor(this.countNum)+ $this.attr('data-text'));
+          }
+        });
+      });
     //#region scroll buttons
     $('.nav-link-1').click(function(){
         window.scrollTo(0,700);
@@ -194,11 +121,13 @@ $(document).ready(function(){
     document.querySelectorAll('.city-buttons button').forEach(function(value,index){
         value.addEventListener('click',function(){
             const activeButton=$('button.active-color');
-            const activeInfo=$('div.active-opacity');
+            const activeInfo=$('div.d-block');
             activeButton.removeClass('active-color');
             value.classList.add('active-color');
-            activeInfo.removeClass('active-opacity');
-            document.querySelector('.info-according-city').children[index].classList.add('active-opacity')
+            activeInfo.removeClass('d-block');
+            activeInfo.addClass('d-none');
+            document.querySelector('.info-according-city').children[index].classList.remove('d-none')
+            document.querySelector('.info-according-city').children[index].classList.add('d-block')
         })
     })
     $('.logo').click(function(){

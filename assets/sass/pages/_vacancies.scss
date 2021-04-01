@@ -1,0 +1,35 @@
+.header-for-vacancies{
+    .logo__second{
+        opacity: 1 !important;
+    }
+    .logo__first{
+        opacity: 0 !important;
+    }
+}
+.vacancies-bottom-header{
+    padding-top: 120px;
+    padding-bottom: 30px;
+}
+.vacancies-content{
+    background-color: #F6F8FE;
+    padding: 100px 0;
+    .vacancies-button{
+        div{
+            padding: 40px 20px;
+            background: #fff;
+            border: 1px solid #FF931E;
+            border-radius: 4px;
+            a{
+                color: black;
+                font-weight: 600;
+            }
+        }
+        div:hover{
+            background: #FF931E;
+        }
+        div:hover a{
+            color: white;
+            text-decoration: none !important;
+        }
+    }
+}
