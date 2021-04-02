@@ -5,16 +5,32 @@ $(document).ready(function(){
     const header=$('.header-part');
     const hamburgerButton=$('.hamburger');
     hamburgerButton.click(function(){
-        hamburgerButton.toggleClass('header__hamburger--active');
-        $('.after-click').toggleClass('d-block');
-        $('.header-part__container').toggleClass('container');
-        $('.header-part__container').toggleClass('w-100');
-        if(window.scrollY<=100 && hamburgerButton.hasClass('header__hamburger--active')==true){
-            header.css('background-color',primaryColor);
-            header.css('transition','0s');
+        if(hamburgerButton.hasClass('header__hamburger--active')==false){
+            hamburgerButton.toggleClass('header__hamburger--active');
+            $('.after-click').toggleClass('d-block');
+            if(window.scrollY<=100 && hamburgerButton.hasClass('header__hamburger--active')==true){
+                header.css('background-color',primaryColor);
+                header.css('transition','0s');
+            }else if(window.scrollY>=100){
+                header.css('background-color','white');
+                header.css('transition','.5s');
+            }else if(hamburgerButton.hasClass('header__hamburger--active')==false){
+                header.css('background-color','rgba(0,0,0,0)');
+                header.css('transition','.5s');
+                }
         }else{
-            header.css('background-color','transparent');
-            header.css('transition','.5s');
+            hamburgerButton.toggleClass('header__hamburger--close');
+            $('.after-click').toggleClass('d-block');
+            if(window.scrollY<=100 && hamburgerButton.hasClass('header__hamburger--close')==true){
+                header.css('background-color','rgba(0,0,0,0)');
+                header.css('transition','0s');
+            }else if(window.scrollY>=100){
+                header.css('background-color','white');
+                header.css('transition','.5s');
+            }else if(hamburgerButton.hasClass('header__hamburger--close')==false){
+                header.css('background-color',primaryColor);
+                header.css('transition','.5s');
+            }
         }
     })
     //#region map circle mouseenter mosueleave events
@@ -40,9 +56,9 @@ $(document).ready(function(){
         })
     })
     //#endregion
-    $(document).scroll(function(){
+    $(window).scroll(function(){
         if(hamburgerButton.hasClass('header__hamburger--active')==false){
-            if(window.scrollY>=100){
+            if($(window).scrollTop()>=100){
                 header.css('backgroundColor','white');
                 header.css('height',`80px`);
                 header.addClass('add-box-shadow');
@@ -62,19 +78,19 @@ $(document).ready(function(){
                 $('.nav-link').css('color','#eee');
             }
             switch (true) {
-                case window.scrollY>=700 && window.scrollY<2030:
+                case window.scrollY>=$('#what-we-do').offset().top && window.scrollY<$('#who-we-are').offset().top:
                     $('.nav-link-1').css('color','#FF931E');
                     break;
-                case window.scrollY>=2030 && window.scrollY<6200:
+                case window.scrollY>=$('#who-we-are').offset().top && window.scrollY<$("#work-with-us").offset().top:
                     $('.nav-link-2').css('color','#FF931E');
                     break;
-                case window.scrollY>=6200 && window.scrollY<6800:
+                case window.scrollY>=$("#work-with-us").offset().top && window.scrollY<$("#news").offset().top:
                     $('.nav-link-3').css('color','#FF931E');
                     break;
-                case window.scrollY>=6800 && window.scrollY<7380:
+                case window.scrollY>=$("#news").offset().top && window.scrollY<$("#end-of-page").offset().top:
                     $('.nav-link-4').css('color','#FF931E');
                     break;
-                case window.scrollY>=7380:
+                case window.scrollY>=$("#end-of-page").offset().top:
                     $('.nav-link-5').css('color','#FF931E');
                     break;
                 default:
@@ -84,7 +100,7 @@ $(document).ready(function(){
         }
     })
     // dinamically increases the count it works after refresh
-    $('.counter').each(function() {
+    $('.statistics').each(function() {
         let $this = $(this),
             countTo = $this.attr('data-count');
     
@@ -102,6 +118,22 @@ $(document).ready(function(){
           }
         });
       });
+    // let i = 0;
+    // let interval1 =  setInterval(function(){
+    //     if(i == $('.counter1').attr('data-count')){
+    //         clearInterval(interval1);
+    //     }
+    //     $('.counter1').text(i++ +  $('.counter1').attr('data-text'));
+
+    // },100)
+    // let j=0;
+    // let interval2 =  setInterval(function(){
+    //     if(j == $('.counter2').attr('data-count')){
+    //         clearInterval(interval2);
+    //     }
+    //     $('.counter2').text(j++ +  $('.counter2').attr('data-text'));
+
+    // },100)
     //#region scroll buttons
     $('.nav-link-1').click(function(){
         window.scrollTo(0,700);
@@ -137,8 +169,12 @@ $(document).ready(function(){
             document.querySelector('.info-according-city').children[index].classList.add('d-block')
         })
     })
-    $('.logo').click(function(){
-        window.location.reload();
-        window.scrollTo(0,0);
-    })
+    
+    $('.info__head').hide();
+    $('.info__head').slideDown(1000);
+    $('.info__body').hide();
+    $('.info__body').slideDown(1000);
+    $('.what-we-do .container .row .col-12 .col-12').hide().slideDown();
+    $('#right-side-id').hide().slideDown(1000);
+
 })

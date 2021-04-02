@@ -10,6 +10,9 @@
 *::before{
     box-sizing: border-box !important;
 }
+html{
+    scroll-behavior: smooth;
+}
 .add-box-shadow{
     box-shadow: #efefef 0px 1px 2px 1px;
 }
@@ -87,6 +90,20 @@
                         }
                         &::after{
                             animation-name: hamburgerDown;
+                        }
+                    }
+                    &--close{
+                        background-color: white;
+                        transform: rotate(-180deg);
+                        &::before,&::after{
+                            animation-duration: .6s;
+                            animation-fill-mode: forwards;
+                        }
+                        &::before{
+                            animation-name: closeHamburgerTop;
+                        }
+                        &::after{
+                            animation-name: closeHamburgerDown;
                         }
                     }
                 }
@@ -168,6 +185,30 @@
         transform: rotate(-45deg);
     }
 }
+@keyframes closeHamburgerTop{
+    0%{
+        top: 0;
+        transform: rotate(45deg);
+    }50%{
+        top: 0;
+        transform: rotate(0);
+    }100%{
+        top: -6px;
+        transform: rotate(0);
+    }
+}
+@keyframes closeHamburgerDown{
+    0%{
+        top: 0;
+        transform: rotate(-45deg);
+    }50%{
+        top: 0;
+        transform: rotate(0);
+    }100%{
+        top: 6px;
+        transform: rotate(0);
+    }
+}
 .bottom-of-header{
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.3)  75%, rgba(0, 0, 0, 0.3) 100%), url('https://www.simbrella.com/site/assets/files/1040/cover.jpg');
@@ -204,6 +245,7 @@
 .what-we-do{
     color: $primary-color;
     transition: .6;
+    min-height: calc(100vh - 80px);
     .container{
         .row{
             .col-12{
@@ -428,13 +470,13 @@
     background-color: $primary-color;
     .button-for-vacancies{
         border-radius: $base*3-1 !important;
-    border: 3px solid #cccccc;
-    outline: none;
-    color: black;
-    font-size: $base*4-1;
-    font-weight: 600;
-    padding: $base*3;
-    &:hover{
+        border: 3px solid #cccccc;
+        outline: none;
+        color: black;
+        font-size: $base*4-1;
+        font-weight: 600;
+        padding: $base*3;
+        &:hover{
         border-color: $secondary-color;
     }
     &:hover img{
