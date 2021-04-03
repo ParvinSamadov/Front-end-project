@@ -1,0 +1,22 @@
+.what-we-do-page{
+    height: 480px;
+    background: linear-gradient(rgba(0,0,0,0.3) 75%, rgba(0,0,0,0.3) 100%),url('https://www.simbrella.com/site/templates/img/we_do_bg.jpg?v=2');
+    background-repeat: no-repeat;
+    background-position: 0 50% !important;
+    background-size: cover;
+}
+.content-of-what-we-do-page{
+    padding: 100px 0;
+    background-color: #F6F8FF;
+    &__body-text{
+        ul{
+            li{
+                font-size: $base*4+2;
+                font-weight: 600;
+            }
+            li::marker{
+                color: $secondary-color;
+            }
+        }
+    }
+}

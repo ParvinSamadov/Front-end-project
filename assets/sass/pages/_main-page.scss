@@ -32,7 +32,8 @@ html{
         position: absolute;
         background: #2D3192;
         width: 100%;
-        transition: .5s;
+        transition: .5s; 
+        height: 100vh;
     }
     &__container{
         .row{
@@ -93,7 +94,6 @@ html{
                         }
                     }
                     &--close{
-                        background-color: white;
                         transform: rotate(-180deg);
                         &::before,&::after{
                             animation-duration: .6s;
@@ -145,20 +145,6 @@ html{
     }
     &::after{
         top: 6px;
-    }
-    &--active{
-        background-color: transparent;
-        transform: rotate(180deg);
-        &::before,&::after{
-            animation-duration: .6s;
-            animation-fill-mode: forwards;
-        }
-        &::before{
-            animation-name: hamburgerTop;
-        }
-        &::after{
-            animation-name: hamburgerDown;
-        }
     }
 }
 @keyframes hamburgerTop{
@@ -221,10 +207,14 @@ html{
                     &__head{
                         font-size: $base*5;
                         font-weight: 600;
+                        opacity: 0;
+                        position: relative;
                     }
                     &__body{
                         font-size: 100%;
                         line-height: 1.2;
+                        opacity: 0;
+                        position: relative;
                     }
                 }
                 
@@ -236,16 +226,14 @@ html{
                     font-size: $base*3+2;
                 }
             }
-            &__container:hover{
-                text-decoration: none;
-            }
         }
     }
 }
 .what-we-do{
     color: $primary-color;
-    transition: .6;
     min-height: calc(100vh - 80px);
+    opacity: 0;
+    position: relative;
     .container{
         .row{
             .col-12{
@@ -303,10 +291,13 @@ html{
             font-weight: 600;
             margin: $base*12 0;
             width:75% !important;
+            opacity: 0;
+            position: relative;
         }
     }
     .right-side{
         background-color:rgba(45, 49, 146, 0.6);
+        display: flex;
         .customized-list-group{
             list-style-type: none !important;
             &__items{

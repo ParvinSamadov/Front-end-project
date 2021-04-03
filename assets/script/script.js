@@ -4,14 +4,19 @@ $(document).ready(function(){
     const mapColor='#E5E9F4';
     const header=$('.header-part');
     const hamburgerButton=$('.hamburger');
+    let isSlideDownWork=true;
+    let areStatisticsWork=true;
     hamburgerButton.click(function(){
         if(hamburgerButton.hasClass('header__hamburger--active')==false){
             hamburgerButton.toggleClass('header__hamburger--active');
+            hamburgerButton.removeClass('header__hamburger--close');
             $('.after-click').toggleClass('d-block');
             if(window.scrollY<=100 && hamburgerButton.hasClass('header__hamburger--active')==true){
+                $('body').css('overflow','hidden');
                 header.css('background-color',primaryColor);
                 header.css('transition','0s');
             }else if(window.scrollY>=100){
+                $('body').css('overflow','hidden');
                 header.css('background-color','white');
                 header.css('transition','.5s');
             }else if(hamburgerButton.hasClass('header__hamburger--active')==false){
@@ -20,11 +25,14 @@ $(document).ready(function(){
                 }
         }else{
             hamburgerButton.toggleClass('header__hamburger--close');
+            hamburgerButton.removeClass('header__hamburger--active');
             $('.after-click').toggleClass('d-block');
             if(window.scrollY<=100 && hamburgerButton.hasClass('header__hamburger--close')==true){
+                $('body').css('overflow','auto');
                 header.css('background-color','rgba(0,0,0,0)');
                 header.css('transition','0s');
             }else if(window.scrollY>=100){
+                $('body').css('overflow','auto');
                 header.css('background-color','white');
                 header.css('transition','.5s');
             }else if(hamburgerButton.hasClass('header__hamburger--close')==false){
@@ -56,105 +64,83 @@ $(document).ready(function(){
         })
     })
     //#endregion
+    // column 67: i wrote slideDown() to this element that's why firstly i should hide it
+    $('.right-side').hide();
     $(window).scroll(function(){
-        if(hamburgerButton.hasClass('header__hamburger--active')==false){
-            if($(window).scrollTop()>=100){
-                header.css('backgroundColor','white');
-                header.css('height',`80px`);
-                header.addClass('add-box-shadow');
-                hamburgerButton.removeClass('header__hamburger');
-                hamburgerButton.addClass('header__hamburger--scroll');
-                $('.logo__first').css('opacity',`0`);
-                $('.logo__second').css('opacity',`1`);
-                $('.nav-link').css('color','black');
-            }else{
-                header.css('backgroundColor','rgba(0,0,0,0)');
-                header.css('height',`120px`);
-                header.removeClass('add-box-shadow');
-                hamburgerButton.addClass('header__hamburger');
-                hamburgerButton.removeClass('header__hamburger--scroll');
-                $('.logo__first').css('opacity',`1`);
-                $('.logo__second').css('opacity',`0`);
-                $('.nav-link').css('color','#eee');
-            }
-            switch (true) {
-                case window.scrollY>=$('#what-we-do').offset().top && window.scrollY<$('#who-we-are').offset().top:
-                    $('.nav-link-1').css('color','#FF931E');
-                    break;
-                case window.scrollY>=$('#who-we-are').offset().top && window.scrollY<$("#work-with-us").offset().top:
-                    $('.nav-link-2').css('color','#FF931E');
-                    break;
-                case window.scrollY>=$("#work-with-us").offset().top && window.scrollY<$("#news").offset().top:
-                    $('.nav-link-3').css('color','#FF931E');
-                    break;
-                case window.scrollY>=$("#news").offset().top && window.scrollY<$("#end-of-page").offset().top:
-                    $('.nav-link-4').css('color','#FF931E');
-                    break;
-                case window.scrollY>=$("#end-of-page").offset().top:
-                    $('.nav-link-5').css('color','#FF931E');
-                    break;
-                default:
-                    break;
-            }
-            
+        if($(window).scrollTop()>=100){
+            header.css('backgroundColor','white');
+            header.css('height',`80px`);
+            header.addClass('add-box-shadow');
+            $('.logo__first').css('opacity',`0`);
+            $('.logo__second').css('opacity',`1`);
+            $('.nav-link').css('color','black');
+            hamburgerButton.removeClass('header__hamburger');
+            hamburgerButton.addClass('header__hamburger--scroll');
+            $('#what-we-do').delay(300).animate({bottom:'20px', opacity:"1" },'slow');
+        }else{
+            header.css('backgroundColor','rgba(0,0,0,0)');
+            header.css('height',`120px`);
+            header.removeClass('add-box-shadow');
+            $('.logo__first').css('opacity',`1`);
+            $('.logo__second').css('opacity',`0`);
+            $('.nav-link').css('color','#eee');
+            hamburgerButton.removeClass('header__hamburger--scroll');
+            hamburgerButton.addClass('header__hamburger');   
         }
+        switch (true) {
+            case Math.floor(window.scrollY)>=Math.floor($('#what-we-do').offset().top) && Math.floor(window.scrollY)<Math.floor($('#who-we-are').offset().top):
+                $('.nav-link-1').css('color',secondaryColor);
+                if(Math.floor(window.scrollY)>=(Math.floor($('#what-we-do-2').offset().top)-300) && isSlideDownWork){
+                    $('.right-side').slideDown(1000);
+                    $('.text-container h1').animate({left:'10px',opacity:'1'},600)
+                    isSlideDownWork=false;
+                }
+                break;
+            case Math.floor(window.scrollY)>=Math.floor($('#who-we-are').offset().top) && Math.floor(window.scrollY)<Math.floor($("#work-with-us").offset().top):
+                $('.nav-link-2').css('color',secondaryColor);
+                if(areStatisticsWork){
+                    $('.statistics').each(function() {
+                        let $this = $(this),
+                            countTo = $this.attr('data-count');
+                    
+                        $({ countNum: $this.text()}).animate({
+                            countNum: countTo
+                        },
+                        {
+                            duration: 3000,
+                            easing:'linear',
+                            step: function() {
+                                $this.text(Math.floor(this.countNum) + $this.attr('data-text'));
+                            },
+                            complete: function() {
+                                $this.text(this.countNum + $this.attr('data-text'));
+                          }
+                        });
+                    });
+                    areStatisticsWork=false;
+                }
+                break;
+            case Math.floor(window.scrollY)>=Math.floor($("#work-with-us").offset().top) && Math.floor(window.scrollY)<Math.floor($("#news").offset().top):
+                $('.nav-link-3').css('color',secondaryColor);
+                break;
+            case Math.floor(window.scrollY)>=Math.floor($("#news").offset().top) && Math.floor(window.scrollY)<Math.floor($("#end-of-page").offset().top):
+                $('.nav-link-4').css('color',secondaryColor);
+                break;
+            case Math.floor(window.scrollY)>=Math.floor($("#end-of-page").offset().top):
+                $('.nav-link-5').css('color',secondaryColor);
+                break;
+            default:
+                break;
+        }  
     })
-    // dinamically increases the count it works after refresh
-    $('.statistics').each(function() {
-        let $this = $(this),
-            countTo = $this.attr('data-count');
-    
-        $({ countNum: $this.text()}).animate({
-            countNum: countTo
-        },
-        {
-            duration: 3000,
-            easing:'linear',
-            step: function() {
-                $this.text(Math.floor(this.countNum)+ $this.attr('data-text'));
-            },
-            complete: function() {
-                $this.text(Math.floor(this.countNum)+ $this.attr('data-text'));
-          }
-        });
-      });
-    // let i = 0;
-    // let interval1 =  setInterval(function(){
-    //     if(i == $('.counter1').attr('data-count')){
-    //         clearInterval(interval1);
-    //     }
-    //     $('.counter1').text(i++ +  $('.counter1').attr('data-text'));
-
-    // },100)
-    // let j=0;
-    // let interval2 =  setInterval(function(){
-    //     if(j == $('.counter2').attr('data-count')){
-    //         clearInterval(interval2);
-    //     }
-    //     $('.counter2').text(j++ +  $('.counter2').attr('data-text'));
-
-    // },100)
+    $('.info__head').animate({bottom:'20px', opacity:"1" },600);
+    $('.info__body').delay(200).animate({bottom:'20px', opacity:"1"},600);
     //#region scroll buttons
-    $('.nav-link-1').click(function(){
-        window.scrollTo(0,700);
-    })
     $('.scroll-button img').click(function(){
-        window.scrollTo(0,700);
+        window.scrollTo(0,$('#what-we-do').offset().top);
     })
     $('.scroll-button span').click(function(){
-        window.scrollTo(0,700);
-    })
-    $('.nav-link-2').click(function(){
-        window.scrollTo(0,2030);
-    })
-    $('.nav-link-3').click(function(){
-        window.scrollTo(0,6200);
-    })
-    $('.nav-link-4').click(function(){
-        window.scrollTo(0,6800);
-    })
-    $('.nav-link-5').click(function(){
-        window.scrollTo(0,7380);
+        window.scrollTo(0,$('#what-we-do').offset().top);
     })
     //#endregion
     document.querySelectorAll('.city-buttons button').forEach(function(value,index){
@@ -169,12 +155,4 @@ $(document).ready(function(){
             document.querySelector('.info-according-city').children[index].classList.add('d-block')
         })
     })
-    
-    $('.info__head').hide();
-    $('.info__head').slideDown(1000);
-    $('.info__body').hide();
-    $('.info__body').slideDown(1000);
-    $('.what-we-do .container .row .col-12 .col-12').hide().slideDown();
-    $('#right-side-id').hide().slideDown(1000);
-
 })

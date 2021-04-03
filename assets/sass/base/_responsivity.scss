@@ -18,6 +18,9 @@
     .ccol-sm-6{
         width: calc(50% - 9px);
     }
+    .col-for-1-vacancies-items{
+        width: calc(100% - 6px) !important;
+    }
 }
 @media screen and (min-width: 768px){
     .customized-img{
@@ -111,8 +114,13 @@
         width: calc(33.3% - 9px);
     }
     .end-of-page{
-        min-height: calc(100vh - 60px);
+        min-height: 100vh;
 
+    }
+}
+@media (min-width: 768px) and (max-width: 992px){
+    .col-for-2-vacancies-items{
+        width: calc(50% - 6px) !important;
     }
 }
 @media screen and (min-width: 992px) {
