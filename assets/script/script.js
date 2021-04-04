@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    AOS.init();
     const primaryColor='#2D3192';
     const secondaryColor='#FF931E';
     const mapColor='#E5E9F4';
@@ -6,6 +7,12 @@ $(document).ready(function(){
     const hamburgerButton=$('.hamburger');
     let isSlideDownWork=true;
     let areStatisticsWork=true;
+    $('.customized-list-group__items a').click(function(){
+        hamburgerButton.toggleClass('header__hamburger--active');
+        hamburgerButton.toggleClass('header__hamburger--close');
+        $('.after-click').toggleClass('d-block');
+        $('body').css('overflow','auto');
+    })
     hamburgerButton.click(function(){
         if(hamburgerButton.hasClass('header__hamburger--active')==false){
             hamburgerButton.toggleClass('header__hamburger--active');
@@ -64,9 +71,8 @@ $(document).ready(function(){
         })
     })
     //#endregion
-    // column 67: i wrote slideDown() to this element that's why firstly i should hide it
-    $('.right-side').hide();
-    $(window).scroll(function(){
+    // column 99: i wrote slideDown() to this element that's why firstly i should hide it
+    function conditionOfPage(){
         if($(window).scrollTop()>=100){
             header.css('backgroundColor','white');
             header.css('height',`80px`);
@@ -92,7 +98,6 @@ $(document).ready(function(){
                 $('.nav-link-1').css('color',secondaryColor);
                 if(Math.floor(window.scrollY)>=(Math.floor($('#what-we-do-2').offset().top)-300) && isSlideDownWork){
                     $('.right-side').slideDown(1000);
-                    $('.text-container h1').animate({left:'10px',opacity:'1'},600)
                     isSlideDownWork=false;
                 }
                 break;
@@ -132,9 +137,13 @@ $(document).ready(function(){
             default:
                 break;
         }  
+    }
+    $('.right-side').hide();
+    conditionOfPage()
+    $(window).scroll(function(){
+        conditionOfPage()
     })
-    $('.info__head').animate({bottom:'20px', opacity:"1" },600);
-    $('.info__body').delay(200).animate({bottom:'20px', opacity:"1"},600);
+    
     //#region scroll buttons
     $('.scroll-button img').click(function(){
         window.scrollTo(0,$('#what-we-do').offset().top);

@@ -20,3 +20,13 @@
         }
     }
 }
+.single-image{
+    background: url("https://www.simbrella.com/site/templates/img/single_image.jpg?v=2");
+    max-height: 480px;
+    min-height: 270px;
+    height: 30vw;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+}

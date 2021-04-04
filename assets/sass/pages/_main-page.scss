@@ -34,6 +34,14 @@ html{
         width: 100%;
         transition: .5s; 
         height: 100vh;
+        .customized-list-group__items{
+            a{
+                color: white !important;
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+        } 
     }
     &__container{
         .row{
@@ -207,14 +215,10 @@ html{
                     &__head{
                         font-size: $base*5;
                         font-weight: 600;
-                        opacity: 0;
-                        position: relative;
                     }
                     &__body{
                         font-size: 100%;
                         line-height: 1.2;
-                        opacity: 0;
-                        position: relative;
                     }
                 }
                 
@@ -232,8 +236,6 @@ html{
 .what-we-do{
     color: $primary-color;
     min-height: calc(100vh - 80px);
-    opacity: 0;
-    position: relative;
     .container{
         .row{
             .col-12{
@@ -291,8 +293,6 @@ html{
             font-weight: 600;
             margin: $base*12 0;
             width:75% !important;
-            opacity: 0;
-            position: relative;
         }
     }
     .right-side{
