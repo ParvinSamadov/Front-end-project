@@ -513,6 +513,10 @@ html{
     background-image: url('https://www.simbrella.com/site/templates/img/footer_bg.svg');
     background-repeat: no-repeat;
     background-position: 0 50%;
+    height: 70vh;
+    @media screen and (min-width: 992px) {
+        height:100vh;
+    }
     .header-of-contacts{
         #Amsterdam{
             color: rgba(255, 255, 255, 0.5);
@@ -544,6 +548,7 @@ html{
             font-size: $base*4-1;
             font-weight: 600;
             padding: $base*3;
+            width: 200px;
             &:hover{
                 border-color: $secondary-color;
             }

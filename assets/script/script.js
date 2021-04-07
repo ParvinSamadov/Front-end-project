@@ -6,7 +6,7 @@ $(document).ready(function(){
     const header=$('.header-part');
     const hamburgerButton=$('.hamburger');
     let isSlideDownWork=true;
-    let areStatisticsWork=true;
+    let areStatisticsWork=true; 
     $('.customized-list-group__items a').click(function(){
         hamburgerButton.toggleClass('header__hamburger--active');
         hamburgerButton.toggleClass('header__hamburger--close');
@@ -71,7 +71,6 @@ $(document).ready(function(){
         })
     })
     //#endregion
-    // column 99: i wrote slideDown() to this element that's why firstly i should hide it
     function conditionOfPage(){
         if($(window).scrollTop()>=100){
             header.css('backgroundColor','white');
